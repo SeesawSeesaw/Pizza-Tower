@@ -794,25 +794,7 @@
         canvasElement.style.height = newHeight + "px";
         canvasElement.style.width = newWidth + "px";
       }
-		// To Pause when it detects the Tab is inactive
-      function pause() { // Don't change the name - GX Mobile calls it when the app becomes inactive.
-        if (!canvasElement.classList.contains("active")) { // Wait for the canvas to load.
-          return
-        }
-        
-        GM_pause();
-        pauseMenu.hidden = false;
-        canvasElement.classList.add("paused");
-      }
-		// To Resume when it detects the Tab is Active
-      function resume() {
-        GM_unpause();
-        pauseMenu.hidden = true;
-        canvasElement.classList.remove("paused");
-        canvasElement.classList.add("unpaused");
-        enterFullscreenIfSupported();
-        lockOrientationIfSupported();
-      }
+		 
 
       function quitIfSupported() {
         if (window.oprt && window.oprt.closeTab) { /* GX Mobile API */
